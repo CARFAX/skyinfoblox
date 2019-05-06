@@ -220,11 +220,11 @@ func TestNestedStructures(t *testing.T) {
 	}
 
 	delegateToField := map[string]interface{}{
-		"stealth":           false,
-		"tsig_key_alg":      "HMAC-MD5",
-		"use_tsig_key_name": false,
-		"address":           "192.168.100.1",
-		"name":              "ns1.example.com",
+		"stealth":                          false,
+		"tsig_key_alg":                     "HMAC-MD5",
+		"use_tsig_key_name":                false,
+		"address":                          "192.168.100.1",
+		"name":                             "ns1.example.com",
 		"shared_with_ms_parent_delegation": false,
 	}
 

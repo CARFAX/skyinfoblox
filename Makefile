@@ -21,7 +21,7 @@ Q = $(if $(filter 1,$V),,@)
 M = $(shell printf "\033[34;1m▶\033[0m")
 
 .PHONY: all
-all: fmt lint test vendor | $(BASE) ; $(info $(M) building executable…) @ ## Build program binary
+all: fmt lint test vendor build ## Build program binary
 	$Q cd $(BASE)/cli && $(GO) build \
 		-tags release \
 		-o ../$(BINARYNAME) ./*.go
@@ -30,6 +30,10 @@ $(BASE): ; $(info $(M) setting GOPATH…)
 	@mkdir -p $(dir $@)
 	@ln -sf $(CURDIR) $@
 
+build: $(BASE) ; $(info $(M) building executable…) @
+	$Q cd $(BASE)/cli && $(GO) build \
+		-tags release \
+		-o ../$(BINARYNAME) ./*.go
 
 # Tools
 

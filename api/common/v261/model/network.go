@@ -11,6 +11,7 @@ type Network struct {
 	Disable                          bool              `json:"disable,omitempty"`
 	EnableDdns                       bool              `json:"enable_ddns,omitempty"`
 	EnableDhcpThresholds             bool              `json:"enable_dhcp_thresholds,omitempty"`
+	ExtAttrs                         string            `json:"extattrs,omitempty"`
 	HighWaterMark                    int               `json:"high_water_mark,omitempty"`
 	HighWaterMarkReset               int               `json:"high_water_mark_reset,omitempty"`
 	LowWaterMark                     int               `json:"low_water_mark,omitempty"`
